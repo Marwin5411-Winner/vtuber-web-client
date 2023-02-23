@@ -49,10 +49,10 @@ export default {
     // },
     getChannelListByAPI() {
       axios
-        .get("http://localhost:3000/api/channels/yt", {
+        .get("https://api.snowdevs.net/vtuber/api/channels/yt", {
           headers: {
             //"Origin": "http://localhost:8080",
-            "Access-Control-Allow-Origin": "http://localhost:3000",
+            "Access-Control-Allow-Origin": "https://api.snowdevs.net",
           },
         })
         .then((response) => {
