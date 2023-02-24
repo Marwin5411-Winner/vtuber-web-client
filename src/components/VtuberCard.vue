@@ -61,7 +61,11 @@
             <p class="mt-2">ผู้ติดตาม : {{ vtuber.subscribers }}</p>
             <p class="text-warp">{{ vtuber.description }}</p>
             <h3 class="text-white">คลิปหรือไลฟ์ล่าสุด : {{ vtuber.lastest_videoTitle }}</h3>
-            <a :href="'https://www.youtube.com/watch?v=' + vtuber.lastest_video" class="btn btn-danger" target="_blank">ขออภัยไม่สามารถโหลด Iframe ได้กดตรงนี้เพื่อไปที่วิดิโอ</a>
+            <div>
+              <p v-if="vtuber.lastest_video == null" >Not Found! Contact Admin</p>
+              <a v-else :href="'https://www.youtube.com/watch?v=' + vtuber.lastest_video" class="btn btn-danger" target="_blank">ขออภัยไม่สามารถโหลด Iframe ได้กดตรงนี้เพื่อไปที่วิดิโอ</a>
+            </div>
+            
             <p class="mt-2">อัปเดทข้อมูลล่าสุด : {{ vtuber.last_updated }}</p>
             
           </div>
